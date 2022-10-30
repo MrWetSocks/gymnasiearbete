@@ -1,1 +1,1 @@
-C:\Projects\gymnasiearbete\fractals\FractalExplorer\x64\Debug\FractalExplorer.exe
+C:\Projects\gymnasiearbete\fractals\fractalExplorer\x64\Debug\fractalExplorer.exe
