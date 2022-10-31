@@ -1,2 +1,12 @@
 ﻿  fractalExplorer.cpp
-  fractalExplorer.vcxproj -> C:\Projects\gymnasiearbete\fractals\fractalExplorer\x64\Debug\fractalExplorer.exe
+C:\Projects\gymnasiearbete\fractals\FractalExplorer\fractalExplorer.cpp(71,47): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Projects\gymnasiearbete\fractals\FractalExplorer\fractalExplorer.cpp(71,43): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+  fractalExplorer.vcxproj -> C:\Projects\gymnasiearbete\fractals\FractalExplorer\x64\Debug\fractalExplorer.exe
