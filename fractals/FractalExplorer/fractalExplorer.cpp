@@ -10,21 +10,21 @@ static const int WINDOW_W_INIT = 1280;
 static const char WINDOW_NAME[] = "Fractal Explorer";
 
 
-static double cam_zoom = 300.0;//180.0;
-static double x_offset = -3.0;
-static double y_offset = -2.0;
-static int current_fractal = 0;
+static double camZoom = 280.0;
+static double xOffset = -2.5;
+static double yOffset = -1.25;
+static int currFractal = 0;
 
 
 sf::Color palette[255];
 
 /* Translates window position to actual position */
 double getXPos(double x) {
-    return x / cam_zoom + x_offset;
+    return x / camZoom + xOffset;
 }
 
 double getYPos(double y) {
-    return y / cam_zoom + y_offset;
+    return y / camZoom + yOffset;
 }
 /************************************************/
 
@@ -38,7 +38,7 @@ void mandelbrot(std::complex<double>& z, std::complex<double> c) {
 
 }
 
-void burning_ship(std::complex<double>& z, std::complex<double> c) {
+void burningShip(std::complex<double>& z, std::complex<double> c) {
     // z_n+1 = (abs(Re(z_n)) + i * abs(Im(z_n))^2 + c
     // Re(z_n+1) = Re(z_n)^2 - Im(z)^2 + Re(c)
     // Im(z_n+1) = abs(2 * Re(z) * Im(z)) + Im(c)
@@ -50,9 +50,9 @@ void burning_ship(std::complex<double>& z, std::complex<double> c) {
 }
 /***********/
 
-std::function<void(std::complex<double>&, std::complex<double>)> fractals[2] = {&mandelbrot, &burning_ship};
+std::function<void(std::complex<double>&, std::complex<double>)> fractals[2] = {&mandelbrot, &burningShip};
 
-sf::VertexArray draw_set(int max_iterations, double escape_radius) {
+sf::VertexArray drawSet(int maxIter, double escapeRadius) {
     sf::VertexArray plot;
 
     for (int px = 0; px < WINDOW_W_INIT; px++) {
@@ -61,9 +61,9 @@ sf::VertexArray draw_set(int max_iterations, double escape_radius) {
             std::complex<double>c = z;
             int i = 0; 
 
-            while (std::norm(z) <= escape_radius && i < max_iterations) {
+            while (std::norm(z) <= escapeRadius && i < maxIter) {
 
-                fractals[current_fractal](z, c);
+                fractals[currFractal](z, c);
                 i++;
             }
             sf::Color color = palette[i];
@@ -76,6 +76,8 @@ sf::VertexArray draw_set(int max_iterations, double escape_radius) {
     return plot;
     
 }
+
+void updateFractal(sf::VertexArray& fractalVertexArray) 
 
 int main()
 {
@@ -90,9 +92,8 @@ int main()
     int x;
     std::cout << "Pick 1 for the mandelbrot set, and 2 for the burning ship fractal" << std::endl;
     std::cin >> x;
-    current_fractal = x-1;
-    bool moving = false;
-    sf::VertexArray mandelbrot_set_points = draw_set(255, 4.0);
+    currFractal = x-1;
+    sf::VertexArray set_points = drawSet(255, 4.0);
 
     while (window.isOpen())
     {
@@ -116,7 +117,7 @@ int main()
                     zoom -= 0.1;
                     cam_zoom += 100;
                 }
-                mandelbrot_set_points = draw_set(255, 4.0);
+                set_points = draw_set(255, 4.0);
                 break;
 
             case sf::Event::KeyPressed:
@@ -138,13 +139,13 @@ int main()
                     current_fractal = 1;
                 }
 
-                mandelbrot_set_points = draw_set(255, 4.0);
+                set_points = draw_set(255, 4.0);
                 break;
             }
         }
 
         window.clear();
-        window.draw(mandelbrot_set_points);
+        window.draw(set_points);
         window.display();
     }
 
