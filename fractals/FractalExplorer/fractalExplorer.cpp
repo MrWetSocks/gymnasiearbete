@@ -5,26 +5,28 @@
 #include <functional>
 
 // Constants
-static const int WINDOW_H_INIT = 720;
-static const int WINDOW_W_INIT = 1280;
+static const int WINDOW_H_INIT  = 720;
+static const int WINDOW_W_INIT  = 1280;
 static const char WINDOW_NAME[] = "Fractal Explorer";
 
 
-static double camZoom = 280.0;
-static double xOffset = -2.5;
-static double yOffset = -1.25;
-static int currFractal = 0;
+static double camZoom       = 280.0;
+static double xOffset       = -2.5;
+static double yOffset       = -1.25;
+static double escapeRadius  = 4.0;
+static int currentFractal      = 0;
+static int maxIter          = 255;
 
 
 sf::Color palette[255];
 
 /* Translates window position to actual position */
 double getXPos(double x) {
-    return x / camZoom + xOffset;
+    return (x+xOffset*100) / camZoom;
 }
 
 double getYPos(double y) {
-    return y / camZoom + yOffset;
+    return (y + yOffset*100) / camZoom;
 }
 /************************************************/
 
@@ -63,7 +65,7 @@ sf::VertexArray drawSet(int maxIter, double escapeRadius) {
 
             while (std::norm(z) <= escapeRadius && i < maxIter) {
 
-                fractals[currFractal](z, c);
+                fractals[currentFractal](z, c);
                 i++;
             }
             sf::Color color = palette[i];
@@ -77,7 +79,9 @@ sf::VertexArray drawSet(int maxIter, double escapeRadius) {
     
 }
 
-void updateFractal(sf::VertexArray& fractalVertexArray) 
+void updateFractal(sf::VertexArray& fractalVertexArray) {
+    fractalVertexArray = drawSet(maxIter, escapeRadius);
+}
 
 int main()
 {
@@ -92,7 +96,7 @@ int main()
     int x;
     std::cout << "Pick 1 for the mandelbrot set, and 2 for the burning ship fractal" << std::endl;
     std::cin >> x;
-    currFractal = x-1;
+    currentFractal = x-1;
     sf::VertexArray set_points = drawSet(255, 4.0);
 
     while (window.isOpen())
@@ -111,35 +115,35 @@ int main()
 
                 if (event.mouseWheelScroll.delta <= -1) {
                     zoom += 0.1;
-                    cam_zoom += 100;
+                    camZoom += 100;
                 }
                 else if (event.mouseWheelScroll.delta >= 1) {
                     zoom -= 0.1;
-                    cam_zoom += 100;
+                    camZoom += 100;
                 }
-                set_points = draw_set(255, 4.0);
+                set_points = drawSet(255, 4.0);
                 break;
 
             case sf::Event::KeyPressed:
                 if (event.key.code == sf::Keyboard::Left) {
-                    x_offset -= 1;
+                    xOffset -= 1;
                 } else if (event.key.code == sf::Keyboard::Right) {
-                    x_offset += 1;
+                    xOffset += 1;
                 }
                 else if (event.key.code == sf::Keyboard::Up) {
-                    y_offset -= 1;
+                    yOffset -= 1;
                 }
                 else if (event.key.code == sf::Keyboard::Down) {
-                    y_offset += 1;
+                    yOffset += 1;
                 }
                 else if (event.key.code == sf::Keyboard::Num1) {
-                    current_fractal = 0;
+                    currentFractal = 0;
                 }
                 else if (event.key.code == sf::Keyboard::Num2) {
-                    current_fractal = 1;
+                    currentFractal = 1;
                 }
 
-                set_points = draw_set(255, 4.0);
+                set_points = drawSet(255, 4.0);
                 break;
             }
         }

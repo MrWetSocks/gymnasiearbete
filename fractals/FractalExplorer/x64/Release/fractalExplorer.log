@@ -1,16 +1,16 @@
 ﻿  fractalExplorer.cpp
-C:\Projects\gymnasiearbete\fractals\FractalExplorer\fractalExplorer.cpp(71,47): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Projects\gymnasiearbete\fractals\FractalExplorer\fractalExplorer.cpp(73,47): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Projects\gymnasiearbete\fractals\FractalExplorer\fractalExplorer.cpp(71,43): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Projects\gymnasiearbete\fractals\FractalExplorer\fractalExplorer.cpp(73,43): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
   Generating code
-  2 of 119 functions ( 1.7%) were compiled, the rest were copied from previous compilation.
+  4 of 119 functions ( 3.4%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
