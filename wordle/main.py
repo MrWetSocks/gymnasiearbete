@@ -21,26 +21,39 @@ print(f"Filtered words: {len(filtered_words)}")
 word_combinations = [[[word], set(word)] for word in filtered_words]
 
 
-# print(f"Total words: {len(filtered_words)}")
-for i in range(4):
-    new_combinations = []
-    letter_combs = set()
-    print(f"Current combinations of {i+1} words with unique letters: {len(word_combinations)}")
-    for index, word in enumerate(filtered_words):
-        if index % 100 == 0:
-            print(len(new_combinations))
-            print(index)
-        for combination, letters_used in word_combinations:
-            new_combination = letters_used | set(word)
-            sorted_chars = ''.join(sorted(new_combination))
-            print(sorted_chars in letter_combs)
-            if len(new_combination) == (i+2)*5 and sorted_chars not in letter_combs:
-                new_combinations.append([combination + [word], new_combination])
-                letter_combs.add(sorted_chars)
+print(f"Total words: {len(filtered_words)}")
 
-    word_combinations = new_combinations
+cand_second_first = []
 
-print(word_combinations)
+for i in filtered_words:
+
+    if all(i.count(char) == 0 for char in filtered_words[0]):
+        cand_second_first.append(i)
+
+print(len(cand_second_first))
+for first_word in filtered_words:
+    combinations = [[first_word, set(first_word)]]
+
+
+
+# for i in range(4):
+#     new_combinations = []
+#     letter_combs = set()
+#     print(f"Current combinations of {i+1} words with unique letters: {len(word_combinations)}")
+#     for index, word in enumerate(filtered_words):
+#         if index % 100 == 0:
+#             print(len(new_combinations))
+#             print(index)
+#         for combination, letters_used in word_combinations:
+#             new_combination = letters_used | set(word)
+#             sorted_chars = ''.join(sorted(new_combination))
+#             if len(new_combination) == (i+2)*5 and sorted_chars not in letter_combs:
+#                 new_combinations.append([combination + [word], new_combination])
+#                 letter_combs.add(sorted_chars)
+#
+#     word_combinations = new_combinations
+
+# print(word_combinations)
 
 
 # print(word_combinations)
