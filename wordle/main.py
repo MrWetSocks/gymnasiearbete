@@ -23,19 +23,28 @@ word_combinations = [[[word], set(word)] for word in filtered_words]
 
 print(f"Total words: {len(filtered_words)}")
 
-cand_second_first = []
+# cand_second_first = []
+#
+# for i in filtered_words:
+#
+#     if all(i.count(char) == 0 for char in filtered_words[0]):
+#         cand_second_first.append(i)
+#
+# print(len(cand_second_first))
 
-for i in filtered_words:
-
-    if all(i.count(char) == 0 for char in filtered_words[0]):
-        cand_second_first.append(i)
-
-print(len(cand_second_first))
 for first_word in filtered_words:
-    combinations = [[first_word, set(first_word)]]
+    combinations = [[[first_word], set(first_word), [word for word in filtered_words if all(word.count(char) == 0 for char in first_word)]]]
+    new_combs = []
+    for comb in combinations:
+        chosen_words, letters, cand_words = comb
 
+        for next_word in cand_words:
+            unique_letters = letters | set(next_word)
 
-
+            if len(unique_letters) == (len(chosen_words) + 1)*5:
+                new_combs.append([[*chosen_words, next_word], unique_letters, [word for word in filtered_words if all([word.count(char) == 0 for char in first_word])]])
+    combinations = new_combs
+    print(len(combinations))
 # for i in range(4):
 #     new_combinations = []
 #     letter_combs = set()
