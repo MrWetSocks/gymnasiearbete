@@ -1,6 +1,8 @@
+import time
 
+start = time.perf_counter()
 # Read in all the words
-words = [i for i in open('wordlist.txt', 'r').read().split('\n')]
+words = [i for i in open('wordlist_2.txt', 'r').read().split('\n')]
 
 print(f"Total words: {len(words)}")
 
@@ -26,11 +28,18 @@ for word in words:
 
 print(f"Filtered words: {len(processed_words)}")
 
+freq = [0]*26
 for word in processed_words:
     for bit in range(26):
-        if not word & (1 << bit):
+        if word & (1 << bit):
+            freq[bit] += 1
             word_sets[bit].add(word)
+freq = freq[:]
 
+least_freq = freq.index(min(freq))
+freq.pop(least_freq)
+next_least = freq.index(min(freq))
+next_least += next_least >= least_freq
 
 five_word_combinations = []
 checked_combs = set()
@@ -39,7 +48,7 @@ def conv_word(word):
     return '|'.join(words_bitmap[word])
 
 def get_candidates(words):
-    candidates = processed_words.copy()
+    candidates = set() | processed_words
 
     for bit in range(26):
         if words & (1 << bit):
@@ -47,16 +56,17 @@ def get_candidates(words):
 
     return candidates
 
-for ind, first_word in enumerate(processed_words):
+for ind, first_word in enumerate({i for i in processed_words if i & ((1 << least_freq) | (1 << next_least))}):
     combinations = [[[first_word], first_word]]
 
     for tot_words in range(4):
-        print(f"Finding all combinations of {tot_words+2} words with starting word \"{conv_word(first_word)}\" (index {ind})")
+        # print(f"Finding all combinations of {tot_words+2} words with starting word \"{conv_word(first_word)}\" (index {ind})")
 
         new_combs = []
         for comb in combinations:
             chosen_words, letters = comb
-            candidate_words = get_candidates(letters)
+            candidate_words = [word for word in processed_words if not word & letters]
+            # print(candidate_words)
             for next_word in candidate_words:
                 unique_letters = letters | next_word
 
@@ -64,16 +74,15 @@ for ind, first_word in enumerate(processed_words):
                     new_combs.append([[*chosen_words, next_word], unique_letters])
                     checked_combs.add(unique_letters)
         combinations = new_combs
-        print(f"{len(combinations)} combinations of {tot_words+2} words starting with word \"{conv_word(first_word)}\"\n")
         if tot_words == 3:
             combins = [i[0] for i in combinations]
 
             if len(combins):
                 five_word_combinations += combins
-                print("Five word combination found: ", *combins, sep='\n')
 
 
 for comb in five_word_combinations:
     wrd = ', '.join([conv_word(word) for word in comb])
     print(wrd)
-# print(five_word_combinations)
+
+print(f"It took a total of {time.perf_counter()-start} seconds to finish")
