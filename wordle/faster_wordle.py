@@ -19,6 +19,8 @@ for word in words:
     for char in word:
         bitmap |= 1 << (ord(char)-97)
 
+    if word == 'klutz':
+        print(bitmap)
     if bitmap.bit_count() == 5:
         if bitmap not in words_bitmap:
             words_bitmap[bitmap] = []
@@ -46,7 +48,6 @@ checked_combs = set()
 
 def conv_word(word):
     return '|'.join(words_bitmap[word])
-
 def get_candidates(words):
     candidates = set() | processed_words
 
@@ -66,8 +67,9 @@ for ind, first_word in enumerate({i for i in processed_words if i & ((1 << least
         for comb in combinations:
             chosen_words, letters = comb
             candidate_words = [word for word in processed_words if not word & letters]
-            # print(candidate_words)
+            # print(len(candidate_words))
             for next_word in candidate_words:
+
                 unique_letters = letters | next_word
 
                 if unique_letters not in checked_combs:
