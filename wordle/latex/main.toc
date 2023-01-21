@@ -1,9 +1,15 @@
-\contentsline {section}{\numberline {1}Inledning}{1}{}%
-\contentsline {section}{\numberline {2}Syfte och frågeställning}{1}{}%
-\contentsline {section}{\numberline {3}Teori}{1}{}%
-\contentsline {section}{\numberline {4}Metod och material}{1}{}%
-\contentsline {subsection}{\numberline {4.1}Metod}{1}{}%
-\contentsline {subsection}{\numberline {4.2}Material}{1}{}%
-\contentsline {section}{\numberline {5}Resultat}{1}{}%
-\contentsline {section}{\numberline {6}Diskussion}{1}{}%
-\contentsline {section}{\numberline {7}Slutsats}{1}{}%
+\babel@toc {swedish}{}
+\contentsline {section}{\numberline {1}Inledning}{3}{}%
+\contentsline {section}{\numberline {2}Syfte och frågeställning}{3}{}%
+\contentsline {section}{\numberline {3}Teori}{3}{}%
+\contentsline {subsection}{\numberline {3.1}Mängdteori}{3}{}%
+\contentsline {subsection}{\numberline {3.2}Grafteori}{3}{}%
+\contentsline {subsubsection}{\numberline {3.2.1}Definition av en graf}{3}{}%
+\contentsline {subsubsection}{\numberline {3.2.2}Bredden-först sökning}{3}{}%
+\contentsline {subsection}{\numberline {3.3}Tidskomplexitet}{3}{}%
+\contentsline {section}{\numberline {4}Metod och material}{3}{}%
+\contentsline {subsection}{\numberline {4.1}Metod}{4}{}%
+\contentsline {subsection}{\numberline {4.2}Material}{4}{}%
+\contentsline {section}{\numberline {5}Resultat}{4}{}%
+\contentsline {section}{\numberline {6}Diskussion}{4}{}%
+\contentsline {section}{\numberline {7}Slutsats}{5}{}%

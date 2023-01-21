@@ -1,10 +1,13 @@
 \documentclass{article}
 
+
+\usepackage[swedish]{babel}
 \usepackage{algorithm}
 \usepackage{algpseudocode}
 \usepackage{amsmath}
-\usepackage{amsmath}
-
+\usepackage[notocbib]{apacite}
+\usepackage{url}
+\usepackage{parskip}
 \title{Hur man löser Wordle}
 \author{Oliver Tervahauta Akatugba}
 \date{\today}
@@ -17,13 +20,13 @@ Teknikprogrammet \\
 Gymnasiearbete 100 p \\
 HT 2022-VT 2023
 \begin{center}
-\vspace*{1cm}
+\vspace*{1.5cm}
 \Huge
 \textbf{Hur man löser Wordle}
 \vspace{0.5cm}
 
 \large
-Studie av olika tekniker för att lösa Wordle
+En jämförelsestudie av olika algoritmer och tekniker för att lösa Wordle
 \end{center}
 
 \vfill
@@ -35,16 +38,83 @@ Handledare: Robin Kastberg
 \end{titlepage}
 
 \section*{Abstract}
+Här skriver du en kort sammanfattande text på engelska om ditt arbete. I abstract ska syfte, frågeställning, metod, material, resultat och slutsats ingå. Max en halv A4-sida. 
+\clearpage
 
 \tableofcontents
+\clearpage
 
 \section{Inledning}
+Här presenterar du kortfattat projektet och leder in läsaren på ämnet. Det är viktigt att ha en bra, välskriven och intresseväckande inledning, för det är här du lägger grunden för resten av rapporten.
+
 \section{Syfte och frågeställning}
+Här presenterar du projektets syfte – varför gör du detta? Varför är det intressant? Här presenterar du också kortfattat den avgränsade frågeställningen eller hypotesen som du undersöker i ert arbete. Tänk på att formulera frågeställningen eller hypotesen så att du kan diskutera resultaten i slutsatsen! Motivera frågeställningen.
+
 \section{Teori}
+I den här delen tar du upp teorier, modeller, begrepp, tidigare forskning, litteratur, statistik, formler osv som är relevanta för rapporten och för att hantera frågeställningen. Sammanfatta tidigare forskning och dess betydelse. 
+
+Teorin är det som lägger grunden för diskussionen, så allt du tar upp i teorin måste du återknyta till i diskussionen. På samma vis får du inte ta upp något i diskussionen som du inte tidigare har lagt grunden för och har stöd för i teoridelen.
+
+\subsection{Mängdteori}
+
+
+\subsection{Grafteori}
+
+
+\subsubsection{Definition av en graf}
+
+
+\subsubsection{Bredden-först sökning}
+
+
+\subsection{Tidskomplexitet}
+
+
 \section{Metod och material}
+Här beskriver du i detalj din undersökningsmetod. Beskriv vilka kontrollförsök du har utfört. Redovisa försökets validitet och reliabilitet. Beskriv vilka felkällor du identifierat och hur du gjort för att minimera systematiska och slumpmässiga fel.
+
+Beskriv hur du gick till väga när du utförde undersökningen så noga att någon annan skulle kunna läsa din rapport och kunna utföra samma försök. Komplettera eventuellt med figurer eller bilder. Om du använder enkäter eller intervjuformulär ska du beskriva eller bifoga dem. Långa enkäter och formulär kan du överväga att bifoga bland rapportens bilagor och bara beskriva kort i detta avsnitt.
+
+Alla figurer ska numreras löpande i rapporten och ha en kortfattat text som beskriver vad figuren visar. Använd till exempel verktyget ”Infoga beskrivning...” i Word (högerklicka på figuren). Alla figurer ska ha en hänvisning i den löpande texten.
+
+Under material beskrivs vad du har använt för att utföra undersökningen, till exempel olika program, delar, produkter, litteratur, intervjusvar, enkätsvar och liknande.
+
 \subsection{Metod}
+
+
 \subsection{Material}
+
+
 \section{Resultat}
+Här redogör du för ditt resultat på ett neutralt sätt. Redovisa data i den presentationsform som är lämplig för din typ av mätdata. Numeriska data redovisar du i tabell- och diagramform. Kvalitativa data redovisar du genom att till exempel återge citat eller observationer. Det kan exempelvis vara relevanta citat från intervjusvar.
+
+Om du har en mycket stor mängd mätdata kan du välja att här bara återge de delar som är relevanta för din diskussion och slutsats och bifoga dina fullständiga mätdata som en bilaga i slutet av rapporten. Glöm dock inte att hänvisa till bilagor i rapporten, till exempel (se bilaga).
+
+Oavsett om du genomfört en kvantitativ eller kvalitativ studie så ska du alltid redovisa i löpande textform. Redovisa till exempel inte bara tabeller och diagram, utan infoga tabeller och diagram som figurer och hänvisa till dem i den löpande texten, till exempel (se figur 1). Beskriv med ord i den löpande texten vilken typ av data varje tabell och diagram visar. Alla figurer, tabeller och diagram ska ha en hänvisning och beskrivas i den löpande texten.
+
+Alla figurer och tabeller ska numreras löpande i rapporten och ha en kortfattad text som beskriver innehållet i figuren eller tabellen.
+
+Observera dock att du inte ska redovisa slutsatser eller en diskussion av dina resultat och slutsatser här – det gör du i nästa avsnitt. Det enda du presenterar här är rådata, inga åsikter.
+
+Om du har valt att helt eller delvis göra en litteraturstudie ska resultaten från denna redovisas här med korrekta källhänvisningar.
+
 \section{Diskussion}
+Detta är den största delen av rapporten. I detta avsnitt för du en diskussion kring de resultat som du har redovisat i ovanstående avsnitt. Här presenteras inga nya mätdata eller resultat, utan din tolkning av de resultat som du redovisat ovan. Det är utifrån denna tolkning du drar slutsatser om svaret på din frågeställning. Slutsatsen redovisar du också här, tillsammans med tolkningen.
+
+När du tolkat ditt resultat måste du diskutera validiteten och reliabiliteten hos dem. Är dina resultat tillräckligt noggranna, tillförlitliga och giltiga för att du ska kunna dra en säker slutsats? Hur stora och relevanta är dina felkällor? Hur stort generellt värde har din slutsats – går den till exempel att använda i andra situationer eller har du bara undersökt vissa specialfall? Behöver man studera frågeställningen vidare? I så fall, hur?
+
+Diskutera här också hur din slutsats relaterar till tidigare forskning inom området. Motsäger den andras resultat? Motsäger andras resultat varandra? I så fall, vems resultat är mest tillförlitliga, era eller deras? Varför? Här gäller det att argumentera på ett sakligt sätt, så att du kan presentera hållbara fakta som stödjer din slutsats. Om du inte kan göra det så måste du vara ärlig och erkänna det, och i stället redogöra för hur man kunde ha gått vidare med undersökningen för att göra den noggrannare. Tänk på att noll är också ett resultat, det vill säga det är också intressant att visa att en viss undersökningsmetod inte är lämplig för att studera en viss frågeställning.
+
+Var noga med att inte dra slutsatser som inte grundar sig på empiriska resultat. Om du använder dig av resultat från en annan källa måste du ange korrekt källhänvisning till den. Om du gör påståenden som baserar sig på spekulationer och inte fakta är det viktigt att det framgår tydligt.
+
+Diskussionsavsnittet är, tillsammans med formuleringen av frågeställningarna, den mest kreativa delen av en vetenskaplig undersökning. Tänk dock hela tiden på att dina påståenden måste gå att förankra i fakta, det vill säga i era mätdata och er analys av dem.
+
 \section{Slutsats}
+Detta avsnitt ska hållas kort och bara bestå av en sammanfattning av den slutsats som du diskuterat fram i det förra avsnittet. Du upprepar alltså din slutsats här, fast i sammanfattad form. Syftet med detta avsnitt är att en läsare enkelt ska kunna hitta och förstå din slutsats utan att behöva läsa igenom hela diskussionsavsnittet.
+
+När du skriver din slutsats är det viktigt att ni formulerar den så att den svarar på just den frågeställning du har skrivit i inledningen. Om den inte gör det så kanske du behöver revidera din frågeställning. Tänk också på att vara tydlig med hur pass tillförlitliga du anser att dina slutsatser är med tanke på dina felkällor.
+\clearpage
+~\cite{wiki:graf}
+\bibliography{references}{}
+\bibliographystyle{apacite}
 \end{document}

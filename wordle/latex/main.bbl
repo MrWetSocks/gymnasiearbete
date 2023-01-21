@@ -1,0 +1,26 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Wikipedia%
+}{%
+Wikipedia%
+}{%
+{\protect \APACyear {2018}}%
+}]{%
+wiki:graf}
+\APACinsertmetastar {%
+wiki:graf}%
+\begin{APACrefauthors}%
+Wikipedia.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2018}{{\APACmonth{11}}}{}.
+\newblock
+\APACrefbtitle {Graf (grafteori).} {Graf (grafteori).}
+\newblock
+\begin{APACrefURL} \url{https://sv.wikipedia.org/wiki/Graf_(grafteori)}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}
