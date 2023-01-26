@@ -51,11 +51,21 @@ Här presenterar du kortfattat projektet och leder in läsaren på ämnet. Det �
 Syftet med detta arbete är att jämföra olika algoritmer för att hitta fem stycken fem-ordiga ord med tjugofem distinkta bokstäver, resonera kring deras effektivitet, samt diskutera möjliga förbättringar till dessa algoritmer för att uppnå optimal prestanda. Frågeställningen som arbetet besvarar är "[TODO: Skriv frågeställning]"
 
 \section{Teori}
-I den här delen tar du upp teorier, modeller, begrepp, tidigare forskning, litteratur, statistik, formler osv som är relevanta för rapporten och för att hantera frågeställningen. Sammanfatta tidigare forskning och dess betydelse. 
+I den här delen tar du upp teorier, modeller, begrepp, tidigare forskning, litteratur, statistik, formler osv som är nta för rapporten och för att hantera frågeställningen. Sammanfatta tidigare forskning och dess betydelse. 
 
 Teorin är det som lägger grunden för diskussionen, så allt du tar upp i teorin måste du återknyta till i diskussionen. På samma vis får du inte ta upp något i diskussionen som du inte tidigare har lagt grunden för och har stöd för i teoridelen.
 
 \subsection{Mängdteori}
+Inom matematiken är en samling av väldefinierade och distinkta objekt ~\cite{wiki:set}. I vårat fall kommer det antingen att vara en sträng (en datatyp inom programmering som representerar text), eller ett tal.
+
+\subsubsection{Mängdoperationer}
+För att effektivt kunna ta del av mängder måste vi definiera en del operationer som kan appliceras på olika mängder. 
+
+Snittet av två mängder A och B (skrivet som $A \cap B$) är definierat som den mängden som innehåller alla element i både $A$ och $B$, eller mer formellt $\{x : x \in A \land x \in B\}$. 
+
+Unionen av två mängder A och B (skrivet som $A \cup B$) är definierat som den mängden som innehåller alla element i som finns i antingen $A$ eller $B$, mer formellt är det definierat som $\{x : x \in A \lor x \in B\}$
+
+Differensen av två mängder $A$ och $B$ (skrivet som $A \setminus B$) är definierat som den mängd av element som finns i $A$ men inte i $B$, eller mer formellt $\{x : (x \in A) \land (x \notin B) \}$
 
 
 \subsection{Grafteori}
@@ -115,6 +125,7 @@ Detta avsnitt ska hållas kort och bara bestå av en sammanfattning av den sluts
 När du skriver din slutsats är det viktigt att ni formulerar den så att den svarar på just den frågeställning du har skrivit i inledningen. Om den inte gör det så kanske du behöver revidera din frågeställning. Tänk också på att vara tydlig med hur pass tillförlitliga du anser att dina slutsatser är med tanke på dina felkällor.
 \clearpage
 ~\cite{wiki:graf}
+~\cite{wiki:set}
 \bibliography{references}{}
 \bibliographystyle{apacite}
 \end{document}

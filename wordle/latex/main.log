@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2023.1.21)  22 JAN 2023 18:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2023.1.23)  26 JAN 2023 17:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -181,34 +181,39 @@ LaTeX Info: Redefining \BHBI on input line 135.
 
  [2
 
-] [3
+]
+Overfull \hbox (14.05632pt too wide) in paragraph at lines 59--60
+\OT1/cmr/m/n/10 Inom ma-te-ma-ti-ken []ar en sam-ling av v[]aldefinierade och di-stink-ta ob-jekt  []Wikipedia,
+ []
+
+[3
 
 ]
-Overfull \hbox (5.5296pt too wide) in paragraph at lines 86--87
+Overfull \hbox (5.5296pt too wide) in paragraph at lines 96--97
 \OT1/cmr/m/n/10 Det en-da ma-te-ri-a-let som anv[]andes pro-gram-me-rings-spr^^Waket Pyt-hon, och PyCharm
  []
 
 [4]
-Overfull \hbox (5.16734pt too wide) in paragraph at lines 106--107
+Overfull \hbox (5.16734pt too wide) in paragraph at lines 116--117
 []\OT1/cmr/m/n/10 Diskutera h[]ar ocks^^Wa hur din slut-sats re-la-te-rar till ti-di-ga-re forsk-ning in-om omr^^Wadet.
  []
 
-[5] (./main.bbl) [6
+[5] [6] (./main.bbl) [7
 
 ] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 3672 strings out of 479304
- 51373 string characters out of 5869779
- 367987 words of memory out of 5000000
- 20850 multiletter control sequences out of 15000+600000
+ 3675 strings out of 479304
+ 51406 string characters out of 5869779
+ 367985 words of memory out of 5000000
+ 20853 multiletter control sequences out of 15000+600000
  406858 words of font info for 40 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,5n,74p,745b,362s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (7 pages, 97613 bytes).
+ 68i,8n,74p,745b,362s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on main.pdf (8 pages, 118053 bytes).
 PDF statistics:
- 52 PDF objects out of 1000 (max. 8388607)
- 36 compressed objects within 1 object stream
+ 63 PDF objects out of 1000 (max. 8388607)
+ 44 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

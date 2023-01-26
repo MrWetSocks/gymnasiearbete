@@ -23,4 +23,27 @@ Wikipedia.%
   \end{APACrefURL}
 \PrintBackRefs{\CurrentBib}
 
+\bibitem [\protect \citeauthoryear {%
+Wikipedia%
+}{%
+Wikipedia%
+}{%
+{\protect \APACyear {2023}}%
+}]{%
+wiki:set}
+\APACinsertmetastar {%
+wiki:set}%
+\begin{APACrefauthors}%
+Wikipedia.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2023}{{\APACmonth{01}}}{}.
+\newblock
+\APACrefbtitle {Set (mathematics).} {Set (mathematics).}
+\newblock
+\begin{APACrefURL} \url{https://en.wikipedia.org/wiki/Set_(mathematics)}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
 \end{thebibliography}
