@@ -1,6 +1,37 @@
 \begin{thebibliography}{}
 
 \bibitem [\protect \citeauthoryear {%
+Cormen%
+, Leiserson%
+, Rivest%
+\BCBL {}\ \BBA {} Stein%
+}{%
+Cormen%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2009}}%
+}]{%
+bk:asymptotic_analysis}
+\APACinsertmetastar {%
+bk:asymptotic_analysis}%
+\begin{APACrefauthors}%
+Cormen, T\BPBI H.%
+, Leiserson, C\BPBI E.%
+, Rivest, R\BPBI L.%
+\BCBL {}\ \BBA {} Stein, C.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{2009}.
+\newblock
+\APACrefbtitle {Introduction to Algorithms} {Introduction to algorithms}\
+  (\PrintOrdinal{tredje}\ \BEd).
+\newblock
+\APACaddressPublisher{}{MIT Press}.
+\newblock
+\APACrefnote{Läst 29 Jan 2023}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Wikipedia%
 }{%
 Wikipedia%
