@@ -8,6 +8,7 @@
 \contentsline {subsubsection}{\numberline {3.2.1}Definition av en graf}{4}{}%
 \contentsline {subsubsection}{\numberline {3.2.2}Bredden-först sökning}{4}{}%
 \contentsline {subsection}{\numberline {3.3}Asymptotisk analys}{4}{}%
+\contentsline {subsection}{\numberline {3.4}Bitvisa operationer}{4}{}%
 \contentsline {section}{\numberline {4}Metod och material}{4}{}%
 \contentsline {subsection}{\numberline {4.1}Metod}{4}{}%
 \contentsline {subsection}{\numberline {4.2}Material}{4}{}%
