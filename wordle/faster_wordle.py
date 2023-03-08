@@ -5,8 +5,6 @@ def solve():
     # Read in all the words
     words = [i for i in open('wordlist_2.txt', 'r').read().split('\n')]
 
-    print(f"Total words: {len(words)}")
-
     # Filter out words with duplicate characters
     words_bitmap = {}
     processed_words = set()
@@ -44,15 +42,12 @@ def solve():
     next_least = freq.index(min(freq))
     next_least += next_least >= least_freq
 
-    print(f"Filtered words: {len(processed_words)}")
 
     adj = {i: {j for j in processed_words if not j & i} for i in processed_words}
 
 
     five_word_combinations = []
-    # q = [[[i], i] for i in processed_words if i | ((1 << least_freq) | (1 << next_least))]
     visited = set()
-    print( "Started looking")
 
     for i in {j for j in processed_words if j | ((1 << least_freq) | (1 << next_least))}:
         q = [[[i], i]]
@@ -68,5 +63,11 @@ def solve():
                 if unique_letters not in visited:
                     visited.add(unique_letters)
                     q.insert(0, [[*words, candidate], unique_letters])
+
+    with open('faster_wordle.txt', 'w') as f:
+        for combination in five_word_combinations:
+            ws = ['|'.join(words_bitmap[i]) for i in combination]
+            f.write(' '.join(ws) + '\n')
+
 
     return time.perf_counter() - start, len(five_word_combinations)

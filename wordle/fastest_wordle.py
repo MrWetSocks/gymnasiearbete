@@ -1,6 +1,6 @@
 import numpy as np
 import time
-def solve(dict_path ='wordlist_2.txt',output_path='fiveletterclique.txt'):
+def solve(dict_path ='wordlist_2.txt',output_path='fastest_wordle.txt'):
     start=time.perf_counter()
     with open(dict_path,'r') as f:
         words=np.array([X[:-1] for X in f if len(X)==6])

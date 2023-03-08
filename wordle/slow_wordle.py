@@ -28,8 +28,6 @@ def solve():
 
             new_combs = []
             for index, comb in enumerate(combinations):
-                if index % 100 == 0:
-                    print(index)
                 chosen_words, letters = comb
                 candidate_words = [word for word in filtered_words if len(set(word) | set(''.join(chosen_words))) == (len(chosen_words) + 1) * 5]
                 for next_word in candidate_words:
@@ -44,5 +42,9 @@ def solve():
 
                 if len(combins):
                     five_word_combinations += combins
+
+    with open('slow_wordle.txt', 'w') as f:
+        f.write('\n'.join([' '.join(i) for i in five_word_combinations]))
+
 
     return time.perf_counter() - start, len(five_word_combinations)
