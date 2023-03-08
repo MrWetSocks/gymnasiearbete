@@ -4,6 +4,7 @@ def solve():
     start = time.perf_counter()
 
     # Read in all the words
+    # O(w)
     words = [i for i in open('wordlist_2.txt', 'r').read().split('\n')]
 
     words_bitmap = {}
@@ -11,6 +12,7 @@ def solve():
     word_sets = [set()]*26
 
     # Filter out dictionary to five letter words with five distinct characters and removing anagrams
+    # O(w)
     for word in words:
         # Ensure word length is 5
         if len(word) != 5:
@@ -23,6 +25,7 @@ def solve():
 
         # Ensure the word does not contain duplicate letters
         if bitmap.bit_count() == 5:
+            # O(1)
             if bitmap not in words_bitmap:
                 words_bitmap[bitmap] = []
 
@@ -31,6 +34,7 @@ def solve():
 
     # Find the least common characters in each word
     freq = [0]*26
+    # O(w)
     for word in processed_words:
         for bit in range(26):
             if word & (1 << bit):
@@ -47,16 +51,22 @@ def solve():
     checked_combs = set()
 
     # Try every word containing either the least common or next least common character as the first word
+    # O(w) + O(w)
     for ind, first_word in enumerate({i for i in processed_words if i & ((1 << least_freq) | (1 << next_least))}):
+
+        # Length: w^n where n == combination length
         combinations = [[[first_word], first_word]]
 
         for tot_words in range(4):
             new_combs = []
 
+            # O(w^n)
             for comb in combinations:
                 chosen_words, letters = comb
+                # O(w)
                 candidate_words = [word for word in processed_words if not word & letters]
 
+                # O(w)
                 for next_word in candidate_words:
 
                     unique_letters = letters | next_word
@@ -67,10 +77,12 @@ def solve():
                         checked_combs.add(unique_letters)
             combinations = new_combs
             if tot_words == 3:
+                # O(w)
                 combins = [i[0] for i in combinations]
 
                 if len(combins):
                     five_word_combinations += combins
+
     with open('fast_wordle.txt', 'w') as f:
         for combination in five_word_combinations:
             ws = ['|'.join(words_bitmap[i]) for i in combination]

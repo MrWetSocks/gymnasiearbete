@@ -1,0 +1,17 @@
+# Fdb version 4
+["pdflatex"] 1677253387 "main.tex" "main.pdf" "main" 1677253387 2
+  "/opt/local/etc/texmf/texmf.cnf" 1674410692 38222 ab09c6cfd27ce6142d8794750ccf2672 ""
+  "/opt/local/share/texmf-texlive/tex/generic/babel-swedish/swedish.ldf" 1614225532 6812 2231579b772e23fa6e867648a377d379 ""
+  "/opt/local/share/texmf-texlive/tex/generic/babel/babel.sty" 1646022752 147649 823237dc86e8acfaa45204ca8085a60e ""
+  "/opt/local/share/texmf-texlive/tex/generic/babel/txtbabel.def" 1646022752 5233 d5e383ed66bf272b71b1a90b596e21c6 ""
+  "/opt/local/share/texmf-texlive/tex/latex/base/article.cls" 1646022759 20144 8a7de377ae7a11ee924a7499611f5a9d ""
+  "/opt/local/share/texmf-texlive/tex/latex/base/size10.clo" 1646022759 8448 96f18c76bf608a36ee6fbf021ac1dd32 ""
+  "/opt/local/var/db/texmf/web2c/pdftex/pdflatex.fmt" 1674412733 2030889 6d4d94d52b1f58ecf11d3fb38e45e4a8 ""
+  "float.sty" 0 -1 0 ""
+  "main.aux" 1677244645 2552 227f8ff488f7770f1ed45335cf54fe23 "pdflatex"
+  "main.tex" 1677253386 9806 f0d6239c1cfee1356d33f419822af240 ""
+  (generated)
+  "main.aux"
+  "main.log"
+  "main.pdf"
+  (rewritten before read)
