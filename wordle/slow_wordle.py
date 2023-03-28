@@ -1,4 +1,12 @@
 import time
+
+# Variables
+# w - words
+# c - characters
+
+# Complexities
+# Preprocessing w, wc + wlogc, w, w^2, w = w^2 + 3w + wc + wlogc
+
 # Read in all the words
 def solve():
     start = time.perf_counter()

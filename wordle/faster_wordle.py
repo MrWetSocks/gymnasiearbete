@@ -2,6 +2,12 @@ import time
 
 # Variables
 # w - words
+# c - characters
+
+# Complexities
+# Preprocessing: w, wc + wlogc, w, w^2, w = w^2 + 3w + wc + wlogc
+# Running: preprocessing +
+# Space:
 def solve():
     start = time.perf_counter()
     # Read in all the words
@@ -20,10 +26,11 @@ def solve():
             continue
         bitmap = 0
 
-        # O(1)
+        # O(c)
         for char in word:
             bitmap |= 1 << (ord(char)-97)
 
+        # O(log c)
         if bitmap.bit_count() == 5:
             # O(1)
             if bitmap not in words_bitmap:
@@ -41,12 +48,11 @@ def solve():
             if word & (1 << bit):
                 freq[bit] += 1
                 word_sets[bit].add(word)
+
     freq = freq[:]
-    # O(w)
     least_freq = freq.index(min(freq))
     freq.pop(least_freq)
 
-    # O(w)
     next_least = freq.index(min(freq))
     next_least += next_least >= least_freq
 
@@ -58,7 +64,10 @@ def solve():
     visited = set()
 
     # O(w)
-    for i in {j for j in processed_words if j | ((1 << least_freq) | (1 << next_least))}:
+    first_words = {j for j in processed_words if j & ((1 << least_freq) | (1 << next_least))}
+# O(w*(w^5*min(len(adj[i])) + w) )
+    # O(w)
+    for i in first_words:
         q = [[[i], i]]
 
         # O(w^5)
@@ -78,6 +87,7 @@ def solve():
                 # O(1)
                 if unique_letters not in visited:
                     visited.add(unique_letters)
+                    # O(w)
                     q.insert(0, [[*words, candidate], unique_letters])
 
     with open('faster_wordle.txt', 'w') as f:
@@ -89,3 +99,6 @@ def solve():
 
 
     return time.perf_counter() - start, len(five_word_combinations)
+s = time.perf_counter()
+solve()
+print(time.perf_counter() - s)
