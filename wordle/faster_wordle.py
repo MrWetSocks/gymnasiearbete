@@ -5,9 +5,9 @@ import time
 # c - characters
 
 # Complexities
-# Preprocessing: w, wc + wlogc, w, w^2, w = w^2 + 3w + wc + wlogc
-# Running: preprocessing +
-# Space:
+# Preprocessing: (w, wc + wlogc, w, w^2, w) = w^2 + 5w
+# Running: preprocessing + w^6 + w^8 = w^6 + w^8 + w^2 + 5w
+# Space: 2w^5 + 2w^2 + 30w
 def solve():
     start = time.perf_counter()
     # Read in all the words
@@ -16,9 +16,11 @@ def solve():
     words = [i for i in open('wordlist_2.txt', 'r').read().split('\n')]
 
     # Filter out words with duplicate characters
-    words_bitmap = {}
-    processed_words = set()
-    word_sets = [set()]*26
+    words_bitmap = {}  # O(w^2)
+    processed_words = set()  # O(w)
+
+    # Size: 26w
+    word_sets = [set()]*26  # O(26w)
 
     # O(w)
     for word in words:
@@ -40,7 +42,7 @@ def solve():
             processed_words.add(bitmap)
 
 
-    freq = [0]*26
+    freq = [0]*26  # O(1)
     # O(w)
     for word in processed_words:
         for bit in range(26):
@@ -57,18 +59,18 @@ def solve():
     next_least += next_least >= least_freq
 
     # O(w^2)
-    adj = {i: {j for j in processed_words if not j & i} for i in processed_words}
+    adj = {i: {j for j in processed_words if not j & i} for i in processed_words}  # O(w^2)
 
 
-    five_word_combinations = []
-    visited = set()
+    five_word_combinations = []  # O(w^5)
+    visited = set()  # O(2^26)
 
     # O(w)
-    first_words = {j for j in processed_words if j & ((1 << least_freq) | (1 << next_least))}
-# O(w*(w^5*min(len(adj[i])) + w) )
+    first_words = {j for j in processed_words if j & ((1 << least_freq) | (1 << next_least))}  # O(w)
+
     # O(w)
     for i in first_words:
-        q = [[[i], i]]
+        q = [[[i], i]]  # O(w^5)
 
         # O(w^5)
         while q:
@@ -78,7 +80,7 @@ def solve():
                 continue
 
             # O(min(len(adj[i]))
-            candidates = set.intersection(*[adj[i] for i in words])
+            candidates = set.intersection(*[adj[i] for i in words])  # O(w)
 
             # O(w)
             for candidate in candidates:
@@ -97,8 +99,9 @@ def solve():
             ws = ['|'.join(words_bitmap[i]) for i in combination]
             f.write(' '.join(ws) + '\n')
 
-
     return time.perf_counter() - start, len(five_word_combinations)
+
+
 s = time.perf_counter()
 solve()
 print(time.perf_counter() - s)
